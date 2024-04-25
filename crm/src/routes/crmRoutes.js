@@ -1,4 +1,4 @@
-import { addNewContact, getContactById, getContacts } from "../controllers/crmController";
+import { addNewContact, deleteContact, getContactById, getContacts, updateContact } from "../controllers/crmController";
 
 
 const routes = (app) =>{
@@ -16,13 +16,10 @@ const routes = (app) =>{
 
     app.route("/contact/:contactId")
     .get(getContactById)
-    .put((req,res)=>{
-        res.send("put reqst succes ")
-    })
+
+    .put(updateContact)
     
-    .delete((req,res)=>{
-        res.send("delete reqst succes ")
-    })
+    .delete(deleteContact)
 }
 
 export default routes;
